@@ -43,3 +43,75 @@ puts 0b11111111 #などと書ける
 #2x10-３乗を表している
 puts 2e-3
 
+#真偽値と条件分岐の応用
+
+t1 = true
+t2 = true
+f1 = false
+
+p t1 || t2 && f1
+p t1 or t2 and f1 #上記に書いたコードと同じ意味
+
+#&& || 意外を用いた分岐の作り方
+def greet(country)
+  country or return 'countryを入力してください。'
+  
+  if country == 'japan'
+    'こんにちは'
+  else 
+    'hello'
+  end
+end
+
+p greet(nil)
+p greet('japan')
+
+#unless文を使うと偽の場合は処理を実行する（ifの反対）
+
+#if式を使った条件分岐　!=で反対を返す
+status = 'erroer'
+if status != 'ok'
+  '何か異常があります'
+end
+
+p status
+
+#unlessを使った条件分岐（!=と同じ意味になる）
+status = 'erroer'
+unless status == 'ok'
+  '何か異常があります'
+end
+
+p status
+
+status = 'erroer'
+message =
+unless status == 'ok' #statusがokと同じではなかったらtrueを返す
+  '何か異常があります'
+else
+  '正常です' #statusがokと同じだったらfalseを返す
+end
+
+p message
+
+s = ' '
+if s.empty?
+  '空文字れるです'
+end
+
+p s
+
+n = 123456
+if !n.zero? == false
+  'ゼロではありません'
+end
+
+p n
+
+user = nil
+
+if user.nil?
+  'nilです'
+end
+
+p user
