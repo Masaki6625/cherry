@@ -115,3 +115,102 @@ if user.nil?
 end
 
 p user
+
+def country
+country = 'japan'
+#if文
+  if country == 'japan'
+    'こんにちは'
+  elsif country == 'us'
+    'Hello'
+  elsif country == 'italy'
+    'Ciao'
+  else
+    '???'
+  end
+end
+
+p country
+
+def county
+  #case文
+  case country
+  when 'japan'
+    'こんにちは'
+  when 'us'
+    'Hello'
+  when 'italy'
+    'Ciao'
+  else
+    '???'
+  end
+end
+
+p country
+
+#条件演算子(三項演算子)
+#式　？真だった場合　：偽だった場合の処理
+
+def count(n)
+  if n > 10
+    '10より大きい'
+  else
+    '10以下'
+  end
+end
+p count(15)
+
+#下の書き方でも上記と同じ意味を与えることができる
+#これまでやってきたように変数に代入することもできる
+def count2(n)
+  n > 10 ? '10より大きい' : '10以下'
+end
+p count2(6)
+
+#引数として渡す値のデフォルト値の設定
+#複数の引数を設定することもできる
+
+#値が入力されなければデフォルトの０を出力する
+def default_args(a,b,c =0,d = 0)
+  "a=#{a},b=#{b},c=#{c},d=#{d}"
+end
+p default_args(1, 2)
+p default_args(1, 2, 3)
+
+#値が両方入っていなかったら渡された引数を両方に代入する
+def point(x,y = x)
+  puts "x =#{x}, y=#{y}"
+end
+
+point(3)
+point(3, 10)
+
+#述語メソッド
+#空文字であればtrue,そうでなければfalse
+p ''.empty? #true
+p 'abc'.empty? #false
+
+#引数の文字列が含まれていればtrue,そうでなければfalse
+p 'watch'.include?('at') #true
+p 'watch'.include?('nil') #false
+
+#奇数ならtrue,偶数ならfalse
+p 1.odd? #true
+p 2.odd? #false
+
+#偶数ならtrue,奇数ならfalse
+p 1.even? #flase
+p 2.even? #true
+
+#オブジェクトがnilであればtrue,それ以外はfalseを返す
+p nil.nil? #true
+p 'abc'.nil? #false
+p 1.nil? #false
+
+#3の倍数ならtrue,それ以外はfalseを返す
+def multiple_of_three?(n)
+  n % 3 == 0
+end
+p multiple_of_three?(4) #false
+p multiple_of_three?(5) #false
+p multiple_of_three?(6) #true
