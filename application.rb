@@ -214,3 +214,6 @@ end
 p multiple_of_three?(4) #false
 p multiple_of_three?(5) #false
 p multiple_of_three?(6) #true
+
+#Javaの勉強（すっきりわかるJava入門）
+#配列についてとメソッドの使い方を学習した
